@@ -1,0 +1,414 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 11,
+    "passes": 10,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-04T00:23:08.833Z",
+    "end": "2025-01-04T00:23:13.045Z",
+    "duration": 4212,
+    "testsRegistered": 11,
+    "passPercent": 90.9090909090909,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d2c84634-de35-4ea7-846b-16a1d9549d8f",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "030090de-07ba-486f-8ffb-f6c2f98345d3",
+          "title": "DELETE API Request Tests",
+          "fullFile": "/Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/test-API/delete_request.js",
+          "file": "/test-API/delete_request.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "SHOUDL BE ABLE TO DELETE A USER",
+              "fullTitle": "DELETE API Request Tests SHOUDL BE ABLE TO DELETE A USER",
+              "timedOut": false,
+              "duration": 314,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const deleteResponse = await axios.delete(\"https://reqres.in/api/users/2\")// end bid user 2-g delete hiij bna\nconsole.log(deleteResponse.data);\nexpect(deleteResponse.status).equal(204)",
+              "err": {},
+              "uuid": "139df2a4-f1d9-47f5-b273-581a80cc426d",
+              "parentUUID": "030090de-07ba-486f-8ffb-f6c2f98345d3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "139df2a4-f1d9-47f5-b273-581a80cc426d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 314,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "ae179c9d-97a1-4722-b631-8da43c640fe7",
+          "title": "Random",
+          "fullFile": "/Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/test-API/getPet.js",
+          "file": "/test-API/getPet.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should get a new joke upon each request",
+              "fullTitle": "Random should get a new joke upon each request",
+              "timedOut": false,
+              "duration": 216,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Make the API request\nconst getPet = await axios.get(\"https://petstore.swagger.io/v2/pet/149\");\n\n// Define the dog object with the correct properties\nconst dog = { id: 149, name: 'borkov', age: 25 };\n\n// Assertions\nexpect(dog).to.have.property('id');\nexpect(dog).to.have.property('name').that.equals('borkov')",
+              "err": {
+                "message": "AxiosError: Request failed with status code 404",
+                "estack": "AxiosError: Request failed with status code 404\n    at settle (file:///Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/node_modules/axios/lib/core/settle.js:19:12)\n    at IncomingMessage.handleStreamEnd (file:///Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/node_modules/axios/lib/adapters/http.js:599:11)\n    at IncomingMessage.emit (node:events:529:35)\n    at endReadableNT (node:internal/streams/readable:1400:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n    at Axios.request (file:///Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/node_modules/axios/lib/core/Axios.js:45:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/test-API/getPet.js:9:20)",
+                "diff": null
+              },
+              "uuid": "12a8864f-6107-4cfa-9a00-b9cadab59197",
+              "parentUUID": "ae179c9d-97a1-4722-b631-8da43c640fe7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "12a8864f-6107-4cfa-9a00-b9cadab59197"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 216,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "3e8bb5de-e397-4190-82cf-b5be94fc66b8",
+          "title": "GET API Request Tests",
+          "fullFile": "/Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/test-API/get_request.js",
+          "file": "/test-API/get_request.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should fetch the user list for page 2 with correct metadata",
+              "fullTitle": "GET API Request Tests Should fetch the user list for page 2 with correct metadata",
+              "timedOut": false,
+              "duration": 98,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Perform the GET request\nconst response = await axios.get('https://reqres.in/api/users?page=2');\nconst { data, page, per_page, total, total_pages } = response.data;\n// Log the response for debugging purposes\nconsole.log(response.data);\n// Assertions\nexpect(response.status).to.equal(200); // Validate HTTP status code\nexpect(page).to.equal(2); // Validate page number\nexpect(per_page).to.equal(6); // Validate the number of users per page\nexpect(data).to.be.an(\"array\").that.is.not.empty; // Ensure the user list is an array and not empty\nexpect(total).to.be.a(\"number\").that.is.greaterThan(0); // Ensure total users exist\nexpect(total_pages).to.be.a(\"number\").that.is.greaterThan(0); // Validate total pages",
+              "err": {},
+              "uuid": "01e9946f-7a78-45ad-b74d-a783ff64b41d",
+              "parentUUID": "3e8bb5de-e397-4190-82cf-b5be94fc66b8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "01e9946f-7a78-45ad-b74d-a783ff64b41d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 98,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "440381ba-413f-420c-a655-1885a9b6b211",
+          "title": "Random jokes",
+          "fullFile": "/Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/test-API/jokes.js",
+          "file": "/test-API/jokes.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return a new joke upon each request",
+              "fullTitle": "Random jokes should return a new joke upon each request",
+              "timedOut": false,
+              "duration": 1237,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Make two API requests for random jokes\nconst firstJoke = await axios.get('https://api.chucknorris.io/jokes/random');\nconst secondJoke = await axios.get('https://api.chucknorris.io/jokes/random');\n\n// Assert that the jokes are different\nexpect(firstJoke.data.value).not.to.equal(secondJoke.data.value);",
+              "err": {},
+              "uuid": "7daa9ed5-7c15-499f-b6f3-aab44972fb9b",
+              "parentUUID": "440381ba-413f-420c-a655-1885a9b6b211",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should get 200 status code response",
+              "fullTitle": "Random jokes should get 200 status code response",
+              "timedOut": false,
+              "duration": 528,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get('https://api.chucknorris.io/jokes/random');\n\n// Assert that the status code is 200\nexpect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "87330cee-34a5-45ed-a9da-a428b04fd397",
+              "parentUUID": "440381ba-413f-420c-a655-1885a9b6b211",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should get a response from the correct URL",
+              "fullTitle": "Random jokes should get a response from the correct URL",
+              "timedOut": false,
+              "duration": 594,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get('https://api.chucknorris.io/jokes/random');\n\n// Assert that the response comes from the expected URL (Chai doesn't directly check URLs, so we check if the response looks valid)\nexpect(response.config.url).to.equal('https://api.chucknorris.io/jokes/random');",
+              "err": {},
+              "uuid": "cecc1bbd-f6f0-420a-8406-a021e9c2318d",
+              "parentUUID": "440381ba-413f-420c-a655-1885a9b6b211",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7daa9ed5-7c15-499f-b6f3-aab44972fb9b",
+            "87330cee-34a5-45ed-a9da-a428b04fd397",
+            "cecc1bbd-f6f0-420a-8406-a021e9c2318d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2359,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "ba6371ed-e1c8-4175-8efa-7673279019e6",
+          "title": "PATCH API Request Tests",
+          "fullFile": "/Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/test-API/patch_request.js",
+          "file": "/test-API/patch_request.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should be able to a UPDATE ONLY NAME",
+              "fullTitle": "PATCH API Request Tests Should be able to a UPDATE ONLY NAME",
+              "timedOut": false,
+              "duration": 237,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Perform the PUT request\nconst patchResponse = await axios.patch(\"https://reqres.in/api/users/2\", {\n  name: randomFname,\n});\nconsole.log(patchResponse.data);\nexpect(patchResponse.status).to.equal(200);\nexpect(patchResponse.data).to.have.property(\"name\").that.equal(randomFname);",
+              "err": {},
+              "uuid": "40308bd5-cead-4f32-9cd2-7a1205c2584b",
+              "parentUUID": "ba6371ed-e1c8-4175-8efa-7673279019e6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "End zuvhun ajiliig UPDATE hiij vzii",
+              "fullTitle": "PATCH API Request Tests End zuvhun ajiliig UPDATE hiij vzii",
+              "timedOut": false,
+              "duration": 260,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const patchResponse = await axios.patch(\"https://reqres.in/api/users/2\", {\n  job: \"zion resident\",\n});\nconsole.log(patchResponse.data);\nexpect(patchResponse.status).to.equal(200);\nexpect(patchResponse.data).to.have.property(\"job\").that.equals(\"zion resident\")",
+              "err": {},
+              "uuid": "3535bac0-fa2f-4d2d-b2ba-6da5c4ccf8c9",
+              "parentUUID": "ba6371ed-e1c8-4175-8efa-7673279019e6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "40308bd5-cead-4f32-9cd2-7a1205c2584b",
+            "3535bac0-fa2f-4d2d-b2ba-6da5c4ccf8c9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 497,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "92308ebe-e135-40ee-a945-6ed3a03a4954",
+          "title": "POST API Request Tests",
+          "fullFile": "/Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/test-API/post_request.js",
+          "file": "/test-API/post_request.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should successfully create a user WITH FAKER with name and job",
+              "fullTitle": "POST API Request Tests Should successfully create a user WITH FAKER with name and job",
+              "timedOut": false,
+              "duration": 244,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const randomFname = faker.person.firstName(); \nconst randomJobTitle = faker.person.jobTitle()\n // Perform the POST request\n const response = await axios.post('https://reqres.in/api/users', {\n     name: randomFname,\n     job: randomJobTitle \n });\n // Log the response for debugging\n console.log(response.data);\n // Assertions\n expect(response.status).to.equal(201); // Ensure status code is 201 (Created)\n expect(response.data).to.have.property(\"name\").that.equals(randomFname); // Validate name\n expect(response.data).to.have.property(\"job\").that.equals(randomJobTitle); // Validate job\n expect(response.data).to.have.property(\"id\"); // Ensure an ID is returned\n expect(response.data).to.have.property(\"createdAt\"); // Ensure a timestamp is returned",
+              "err": {},
+              "uuid": "ad527acc-2348-49d4-b9d2-622fb836d0bb",
+              "parentUUID": "92308ebe-e135-40ee-a945-6ed3a03a4954",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should successfully create a user WITH GIVEN name and job ",
+              "fullTitle": "POST API Request Tests Should successfully create a user WITH GIVEN name and job ",
+              "timedOut": false,
+              "duration": 221,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Perform the POST request\n   const response = await axios.post('https://reqres.in/api/users', \n       {\n           \"name\": \"morpheus\",\n           \"job\": \"zion resident\"\n       }\n   );\n   // Log the response for debugging\n   console.log(response.data)\n   expect(response.data).to.have.property(\"name\").equals(\"morpheus\");\n   expect(response.data.job).equal(\"zion resident\")",
+              "err": {},
+              "uuid": "1f0db467-7fe5-4d9c-8bf1-5b957dae6a5f",
+              "parentUUID": "92308ebe-e135-40ee-a945-6ed3a03a4954",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ad527acc-2348-49d4-b9d2-622fb836d0bb",
+            "1f0db467-7fe5-4d9c-8bf1-5b957dae6a5f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 465,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        },
+        {
+          "uuid": "87bc6b0f-bbbf-4fcd-bcad-2f1f9f27c4d2",
+          "title": "PUT API Request Tests",
+          "fullFile": "/Users/narmandakhbayaraa/Desktop/tau-js/API-TESTING/test-API/put_request.js",
+          "file": "/test-API/put_request.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should be able to a update a user details",
+              "fullTitle": "PUT API Request Tests Should be able to a update a user details",
+              "timedOut": false,
+              "duration": 248,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Perform the PUT request\nconst putResponse = await axios.put(\"https://reqres.in/api/users/2\", {\n  name: randomFname,\n  job: randomJobTitle,\n});\nconsole.log(putResponse.data);\nexpect(putResponse.status).to.equal(200);\nexpect(putResponse.data).to.have.property(\"name\").that.equal(randomFname);\nexpect(putResponse.data).to.have.property(\"job\").that.equal(randomJobTitle)",
+              "err": {},
+              "uuid": "8a13e1d5-4802-4dfb-bc12-87ceca75ed33",
+              "parentUUID": "87bc6b0f-bbbf-4fcd-bcad-2f1f9f27c4d2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8a13e1d5-4802-4dfb-bc12-87ceca75ed33"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 248,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 5000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
