@@ -1,4 +1,4 @@
-name: E2E on Chrome
+name:  PROJECT 
 
 on:
   workflow_dispatch: # Allows manual triggering
@@ -8,7 +8,8 @@ on:
     branches:
       - master
       - staging
-
+    paths:
+        - 'API-TESTING/**' # Only trigger for changes in the API-TESTING folder
 jobs:
   Axios-Mocha-Test:
     runs-on: ubuntu-latest
