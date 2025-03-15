@@ -1,4 +1,4 @@
-name:  PROJECT 
+name: PROJECT
 
 on:
   workflow_dispatch: # Allows manual triggering
@@ -9,7 +9,10 @@ on:
       - master
       - staging
     paths:
-        - 'API-TESTING/**' # Only trigger for changes in the API-TESTING folder
+      - 'API-TESTING/**' # Trigger only for changes in the API-TESTING folder
+      - 'package.json'
+      - 'package-lock.json' # Trigger for changes to dependency files
+
 jobs:
   Axios-Mocha-Test:
     runs-on: ubuntu-latest
